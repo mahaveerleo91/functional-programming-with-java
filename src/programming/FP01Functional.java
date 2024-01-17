@@ -1,14 +1,16 @@
 package programming;
 
 import java.util.List;
+import java.util.stream.IntStream;
 
 public class FP01Functional {
 
         public static void main(String[] args) {
             List<Integer> numbers = List.of(12, 5, 76, 89, 35, 45, 6, 7, 78, 99, 67);
             //printAllNumberInListFunctional(numbers);
-           // printEvenNumberInListFunctional(numbers);
-            printonlyOddNum(numbers);
+            //printEvenNumberInListFunctional(numbers);
+            // printonlyOddNum(numbers);
+            printReverseNum(numbers);
         }
 
         private static boolean isEven(int number){
@@ -27,6 +29,12 @@ public class FP01Functional {
         }
         private static void printonlyOddNum(List<Integer> numbers){
             numbers.stream().filter(number ->number%2==1).forEach(System.out::println);
+        }
+
+        private static void printReverseNum(List<Integer> numbers){
+            IntStream.range(0, numbers.size()).map(i ->numbers.size() - 1 - i).forEachOrdered(index ->
+            {int element = numbers.get(index); System.out.println(element);
+            });
         }
 
 }
