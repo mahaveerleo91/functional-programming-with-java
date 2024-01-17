@@ -22,7 +22,7 @@ public class FP01Functional {
                 //.filter(FP01Functional::isEven)
                 .filter(number -> number%2 == 0 )// using lambda expression
                 // only allow even number
-            .forEach(System.out::println); // method reference
+            .forEach(System.out::println);
     }
 }
 
