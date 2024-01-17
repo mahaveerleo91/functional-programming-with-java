@@ -1,5 +1,7 @@
 package programming;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.IntStream;
 
@@ -9,8 +11,12 @@ public class FP01Functional {
             List<Integer> numbers = List.of(12, 5, 76, 89, 35, 45, 6, 7, 78, 99, 67);
             //printAllNumberInListFunctional(numbers);
             //printEvenNumberInListFunctional(numbers);
-            // printonlyOddNum(numbers);
-            printReverseNum(numbers);
+            //printonlyOddNum(numbers);
+            //printReverseNum(numbers);
+
+            List<Integer> mutableNumbers = new ArrayList<>(numbers);
+            Collections.sort(mutableNumbers, Collections.reverseOrder());
+            mutableNumbers.stream().forEach(System.out::println);
         }
 
         private static boolean isEven(int number){
@@ -36,6 +42,8 @@ public class FP01Functional {
             {int element = numbers.get(index); System.out.println(element);
             });
         }
+
+
 
 }
 
